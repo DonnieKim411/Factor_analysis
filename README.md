@@ -8,11 +8,17 @@ To download the package, download **Factor_analysis_pkg_0.0.1-py3-none-any.whl**
 
 Assuming you have activated an isolated environment (like virtualenv), run:
 
-`pip install Factor_analysis_pkg_0.0.1-py3-none-any.whl`
+```
+pip install Factor_analysis_pkg_0.0.1-py3-none-any.whl
+```
 
 To use the factor analysis function, prompt python terminal (or ipython) and type,
 
-`from Factor_analysis_pkg import factor_analysis`
+[code language="python"]
+```
+from Factor_analysis_pkg import factor_analysis
+```
+[/code]
 
 factor_analysis function is described below:
 
@@ -30,18 +36,24 @@ Note that the output **z** is mostly the main concern as the factor analysis is 
 
 The package also includes an illustrative example of factor analysis using IRIS dataset for feature dimensionality reduction:
 
+[code language="python"]
 ```
 from Factor_analysis_pkg import example
 example.run_demo()
 ```
+[/code]
 
 It will print out the following statements on the terminal:
+
+[code language="python"]
 
 ```
 play with iris data
 Assume 2 latent variables
 Assume 3 latent variables
 ```
+[/code]
+
 For *2 latent variable* case, it will produce a **2D scatter plot** and a **log likelihood over iterations**
 
 For *3 latent variable* case, it will produce a **3D scatter plot** and a **log likelihood over iterations**

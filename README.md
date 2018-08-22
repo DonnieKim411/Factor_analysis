@@ -8,11 +8,11 @@ To download the package, download **Factor_analysis_pkg_0.0.1-py3-none-any.whl**
 
 Assuming you have activated an isolated environment (like virtualenv), run:
 
-> pip install Factor_analysis_pkg_0.0.1-py3-none-any.whl
+`pip install Factor_analysis_pkg_0.0.1-py3-none-any.whl`
 
 To use the factor analysis function, in your python terminal (or ipython),
 
-> from Factor_analysis_pkg import factor_analysis
+`from Factor_analysis_pkg import factor_analysis`
 
 factor_analysis function is described below:
 
@@ -30,8 +30,10 @@ Note that the output Z is mostly the main concern as the factor analysis is ofte
 
 The package also included an illustrative example of factor analysis using IRIS dataset for feature reduction:
 
-> from Factor_analysis_pkg import example
-> example.run_demo()
+```
+from Factor_analysis_pkg import example
+example.run_demo()
+```
 
 It will print out the following statements on the terminal:
 

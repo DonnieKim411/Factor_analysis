@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: Factor-analysis-pkg
+Version: 0.0.1
+Summary: perform factor analysis with EM method
+Home-page: https://github.com/kdk411/EM_factor_analysis
+Author: Donnie Kim
+Author-email: kdk411@gmail.com
+License: UNKNOWN
+Description: # EM_Factor_Analysis Package
+        
+        This is a EM Factor analysis package. 
+        
+        EM_Factor_analysis takes input input of numpy array in float and number of factors to be considered and returns the factor loading matrix, latent variable, and log-likelihood history
+        
+        example.py illustrates the usage of EM_Factor_analysis with IRIS dataset.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Description-Content-Type: text/markdown

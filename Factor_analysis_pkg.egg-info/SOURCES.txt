@@ -1,0 +1,10 @@
+README.md
+setup.py
+Factor_analysis_pkg/EM_Factor_analysis.py
+Factor_analysis_pkg/__init__.py
+Factor_analysis_pkg/example.py
+Factor_analysis_pkg.egg-info/PKG-INFO
+Factor_analysis_pkg.egg-info/SOURCES.txt
+Factor_analysis_pkg.egg-info/dependency_links.txt
+Factor_analysis_pkg.egg-info/requires.txt
+Factor_analysis_pkg.egg-info/top_level.txt

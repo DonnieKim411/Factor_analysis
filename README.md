@@ -4,7 +4,7 @@ This is the python package performing factor analysis with Expectation Maximizat
 
 This package is only tested in Linux environment and with Python 3.6.5
 
-To download the package wheel, download [Factor_analysis_pkg_0.0.1-py3-none-any.whl](https://github.com/kdk411/Factor_analysis/blob/master/dist/Factor_analysis_pkg-0.0.1-py3-none-any.whl) under **dist** directory in this git page (or click the link)
+To download the package wheel, download [Factor_analysis_pkg_0.0.1-py3-none-any.whl](https://github.com/kdk411/Factor_analysis/raw/master/dist/Factor_analysis_pkg-0.0.1-py3-none-any.whl) under **dist** directory in this git page (or click the link)
 
 Assuming you have activated an isolated environment (like virtualenv), run:
 

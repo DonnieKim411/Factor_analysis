@@ -27,12 +27,13 @@ def factor_analysis(x, nFactors):
 	mu = x.mean(axis=0) # obtain the mean value in each observed var
 	x_scaled = x - mu # x has a zero mean and cov of lambda*lambda^T + psi
 	
-	Covariance = np.cov(x_scaled.T)
+	Covariance = np.cov(x_scaled.T) # obtain covariance of x
 
-	Psi = np.diag(Covariance.diagonal())
+	Psi = np.diag(Covariance.diagonal()) # diagonal matrix
 
-	Scaling = la.det(Covariance)**(1./nData)
-
+	Scaling = la.det(Covariance)**(1./nData) # used to ensure that when intergrated, it sums up to 1
+ 
+ 	# Used later in E and M steps. Pre-define them here.
 	I = np.eye(nFactors)
 	W = np.random.normal(0,np.sqrt(Scaling/nFactors),(nDim,nFactors))
 
@@ -44,22 +45,22 @@ def factor_analysis(x, nFactors):
 		   
 		# E-step
 		WPsi = np.dot(W.T, la.inv(Psi))
-		G = la.inv(I+np.dot(WPsi,W))
+		G = la.inv(I+np.dot(WPsi,W)) # 12.68 from Bishop
 
-		Ez = np.dot(G,np.dot(WPsi,x_scaled.T))
-		Ezz = G + np.dot(Ez,Ez.T)
+		Ez = np.dot(G,np.dot(WPsi,x_scaled.T)) # 12.66 from Bishop
+		Ezz = G + np.dot(Ez,Ez.T) # 12.67 from Bishop
 
 		# M step
 		x_scaledEz = np.dot(x_scaled.T,Ez.T)
 
-		W = np.dot(x_scaledEz,la.inv(Ezz))
-		Psi = np.diag(np.diag(Covariance-np.dot(W,x_scaledEz.T)/nData))
+		W = np.dot(x_scaledEz,la.inv(Ezz)) # 12.69 from Bishop
+		Psi = np.diag(np.diag(Covariance-np.dot(W,x_scaledEz.T)/nData)) # 12.70 from Bishop
 
 		# Log-likelihood
-		Sigma = np.dot(W,np.transpose(W)) + Psi
+		Sigma = np.dot(W,np.transpose(W)) + Psi # 21.1.11 from Barber
 		logdet = np.log(la.det(2*np.pi*Sigma))
 		
-		LL = -nData/2*(np.trace(np.dot(la.inv(Sigma),Covariance.T)) + logdet)
+		LL = -nData/2*(np.trace(np.dot(la.inv(Sigma),Covariance.T)) + logdet) # 21.1.13 from Barber
 
 		# record the log-likelihood
 		log_history.append(LL)
@@ -68,6 +69,7 @@ def factor_analysis(x, nFactors):
 			break
 		old_LL = LL
 
+	# Obtain  z (or Ez)
 	InvSigma = la.inv(np.dot(W, np.transpose(W)) + Psi)
 	z = np.dot(x_scaled, np.dot(np.transpose(InvSigma), W) )
 
